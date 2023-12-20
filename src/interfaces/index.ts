@@ -1,0 +1,1 @@
+export type {BannerStateProps ,SliderComponentProps} from './SliderProps'
