@@ -18,7 +18,7 @@ export default function Cars() {
         <Slider />
       </div>
 
-      <div className="flex gap-3  text-lg">
+      <div className="flex gap-5 flex-wrap  text-lg">
         <section className=" w-[10rem]  flex flex-col">
           <h3 className="font-bold text-xl">
             ¡Descubrí más herramientas Aero!

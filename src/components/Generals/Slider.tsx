@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { SliderComponentProps, BannerStateProps } from "../../interfaces";
 import Banner from "../../assets/banner1.png";
+import Banner2 from "../../assets/banner3-min.png";
+import Banner3 from "../../assets/banner4-min.png";
 export default function Slider({
   image1,
   image2,
@@ -70,7 +72,17 @@ export default function Slider({
           value={"banner3"}
         />
       </div>
-      <img src={Banner} className=" max-h-[30rem] w-full " />
+      <div className=" w-full  h-[30rem]">
+        {banner.banner1 && (
+          <img src={Banner} className=" max-h-[30rem] w-full  transition-all ease-linear " />
+        )}
+        {banner.banner2 && (
+          <img src={Banner2} className=" max-h-[30rem] w-full  transition-all ease-linear " />
+        )}
+        {banner.banner3 && (
+          <img src={Banner3} className=" max-h-[30rem] w-full  transition-all ease-linear " />
+        )}
+      </div>
     </div>
   );
 }
