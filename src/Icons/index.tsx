@@ -352,6 +352,7 @@ function DisneyIcon() {
   );
 }
 function ArrowRight({ opacity }: { opacity: string }) {
+  console.log(opacity);
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

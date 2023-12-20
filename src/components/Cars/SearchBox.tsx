@@ -1,6 +1,7 @@
 import { UbicationIcon } from "../../Icons";
 
 export default function SearchBox({ FullFilters }: { FullFilters?: string }) {
+  console.log(FullFilters);
   return (
     <section
       className="flex flex-col gap-10  px-6 py-6 bg-white w-6/12  h-fit "
