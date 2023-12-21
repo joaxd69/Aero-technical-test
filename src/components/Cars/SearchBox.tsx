@@ -7,7 +7,7 @@ export default function SearchBox({ FullFilters }: { FullFilters?: boolean }) {
   return (
     <section
       className={`flex  gap-10  px-6  bg-white ${
-        FullFilters ? "w-full  h-[5.5rem]   lg:pr-[20%] " : "w-6/12 flex-col py-6"
+        FullFilters ? "w-full  h-[5.5rem]   lg:pr-[15%]  py-4 pb-6 " : "w-6/12 flex-col py-6"
       }  h-fit `}
       style={{ boxShadow: " 0px 0px 8.173px 0px rgba(0, 0, 0, 0.20)" }}>
       {!FullFilters && (

@@ -8,6 +8,9 @@ export default {
         secondary: "#F7F7F7",
         blueAeroFont: "#255DC4",
       },
+      boxShadow: {
+        containerShadow: "0px 0px 8.173px 0px rgba(0, 0, 0, 0.20)",
+      }
     },
   },
   plugins: [],

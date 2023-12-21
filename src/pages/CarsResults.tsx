@@ -1,5 +1,6 @@
 import SearchBox from "../components/Cars/SearchBox";
 import FilterBoxSection from "../components/CarsResults/FilterBoxSection";
+import ResultSection from "../components/CarsResults/ResultSection";
 
 export default function CarsResults() {
   return (
@@ -9,6 +10,7 @@ export default function CarsResults() {
       </section>
       <section className="flex gap-4 w-full px-8">
         <FilterBoxSection />
+        <ResultSection />
       </section>
     </div>
   );
