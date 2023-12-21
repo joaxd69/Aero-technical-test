@@ -11,6 +11,7 @@ function App() {
         <Route element={<Layout />} path="/">
           <Route element={<Cars />} path="" />
           <Route element={<CarsResults />} path="/results" />
+          <Route element={<Cars />} path="/prueba" />
         </Route>
       </Routes>
     </div>
