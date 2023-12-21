@@ -10,7 +10,13 @@ function App() {
       <Routes>
         <Route element={<Layout />} path="/">
           <Route element={<Cars />} path="" />
-          <Route element={<CarsResults />} path="results" />
+          <Route
+            element={<CarsResults />}
+            errorElement={<p>error</p>}
+            path="results"
+            ErrorBoundary={() => <p>error2</p>}
+          />
+          <Route element={<p>probando</p>} path="prueba" />
           <Route path="*" element={<p>There's nothing here: 404</p>} />
         </Route>
       </Routes>
