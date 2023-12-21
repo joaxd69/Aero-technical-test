@@ -9,7 +9,7 @@ export default function Slider({
   image3,
 }: SliderComponentProps) {
   const [allowNext, setAllowNext] = useState(true);
-  console.log(allowNext, image1, image2, image3, setAllowNext);
+  console.log(allowNext, image1, image2, image3, typeof setAllowNext);
   const [banner, setBanners] = useState<BannerStateProps>({
     banner1: true,
     banner2: false,
