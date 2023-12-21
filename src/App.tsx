@@ -8,6 +8,8 @@ function App() {
   return (
     <div>
       <Routes>
+        <Route path="*" element={<p>There's nothing here: 404</p>} />
+        <Route path="/prueba2" element={<p>probando2</p>} />
         <Route element={<Layout />} path="/">
           <Route element={<Cars />} path="" />
           <Route
