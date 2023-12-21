@@ -7,7 +7,7 @@ export default function Layout() {
     <div className="flex flex-col w-full   items-center bg-secondary min-h-screen">
       <TopNav />
       <Nav />
-      <main className="w-full min-h-screen pt-8">
+      <main className="w-full min-h-screen ">
         <Outlet />
       </main>
     </div>

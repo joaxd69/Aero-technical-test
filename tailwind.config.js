@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: "#0A42A8",
         secondary: "#F7F7F7",
+        blueAeroFont: "#255DC4",
       },
     },
   },

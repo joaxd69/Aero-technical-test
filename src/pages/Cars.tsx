@@ -12,7 +12,7 @@ import Slider from "../components/Generals/Slider";
 
 export default function Cars() {
   return (
-    <div className="flex flex-col w-full px-8  gap-6">
+    <div className="flex flex-col w-full px-8  gap-6 pt-8">
       <div className="flex w-full  justify-between gap-4   ">
         <SearchBox />
         <Slider />
