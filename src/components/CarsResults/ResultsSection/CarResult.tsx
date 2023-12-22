@@ -1,20 +1,59 @@
-import CharacteristicsResults from "./CharacteristicsResults";
-import HeaderCarResult from "./HeaderCarResult";
+import { useState } from "react";
+import BrandsCarsButtons from "./BrandsCarsButtons";
+import CharacteristicsResults from "./CharacteristicsResults/CharacteristicsResults";
+import HeaderCarResult from "./HeaderCarResult/HeaderCarResult";
+import { Cars } from "../../../FakeData/Cars";
 
 export default function CarResult() {
+  const [actualSection, setActualSection] = useState("");
+  const selectSection = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setActualSection(e.currentTarget.name);
+  };
   return (
     <>
-      <div className="w-full bg-white shadow-containerShadow flex-col flex">
-        <HeaderCarResult />
-      </div>
-      <section className="flex gap-1 bg-white py-3 border-b border-primary">
-        <button>HERTZ</button>
-        <button>DOLLAR DIAMOND</button>
-        <button>AVIS</button>
-        <button>BUDGET</button>
-        <button>NATIONAL</button>
-      </section>
-      <CharacteristicsResults />
+      {Cars.map((car) => (
+        <>
+          <div className="w-full bg-white shadow-containerShadow flex-col flex">
+            <HeaderCarResult Car={car} />
+          </div>
+          <BrandsCarsButtons
+            selectSection={selectSection}
+            actualSection={actualSection}
+          />
+          <div>
+          <CharacteristicsResults
+            price={car.price}
+            priceTax={car.priceTax}
+            pricePerDay={car.pricePerDay}
+            name={car.name}
+            description={car.description}
+            image={car.image}
+            moreInfo={car.moreInfo}
+            id={car.id}
+          />
+          <CharacteristicsResults
+            price={car.price}
+            priceTax={car.priceTax}
+            pricePerDay={car.pricePerDay}
+            name={car.name}
+            description={car.description}
+            image={car.image}
+            moreInfo={car.moreInfo}
+            id={car.id}
+          />
+          <CharacteristicsResults
+            price={car.price}
+            priceTax={car.priceTax}
+            pricePerDay={car.pricePerDay}
+            name={car.name}
+            description={car.description}
+            image={car.image}
+            moreInfo={car.moreInfo}
+            id={car.id}
+          />
+          </div>
+        </>
+      ))}
     </>
   );
 }

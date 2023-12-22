@@ -74,13 +74,22 @@ export default function Slider({
       </div>
       <div className=" w-full  h-[30rem]">
         {banner.banner1 && (
-          <img src={Banner} className=" max-h-[30rem] w-full  transition-all ease-linear " />
+          <img
+            src={Banner}
+            className=" max-h-[30rem] w-full  transition-all ease-linear "
+          />
         )}
         {banner.banner2 && (
-          <img src={Banner2} className=" max-h-[30rem] w-full  transition-all ease-linear " />
+          <img
+            src={Banner2}
+            className=" max-h-[30rem] w-full  transition-all ease-linear "
+          />
         )}
         {banner.banner3 && (
-          <img src={Banner3} className=" max-h-[30rem] w-full  transition-all ease-linear " />
+          <img
+            src={Banner3}
+            className=" max-h-[30rem] w-full  transition-all ease-linear "
+          />
         )}
       </div>
     </div>

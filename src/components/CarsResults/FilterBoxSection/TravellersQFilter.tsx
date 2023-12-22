@@ -1,7 +1,7 @@
 export default function TravellersQFilter() {
   return (
     <section className="flex flex-col border-b border-[#B7B7B7] pb-6 gap-2">
-      <h5 className="text-blueAeroFont">Cantidad de Pasajeros</h5>
+      <h5 className="text-blueAero">Cantidad de Pasajeros</h5>
       <article className="flex items-center gap-2">
         <input
           type="checkbox"

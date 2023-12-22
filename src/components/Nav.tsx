@@ -1,4 +1,15 @@
-import { AirPlaneIcon2, BagIcon, BoatIcon, BusIcon, CarIcon, DisneyIcon, HotelIcon, MedicineKitIcon, PointLocationIcon, SuitCaseIcon } from "../Icons"
+import {
+  AirPlaneIcon2,
+  BagIcon,
+  BoatIcon,
+  BusIcon,
+  CarIcon,
+  DisneyIcon,
+  HotelIcon,
+  MedicineKitIcon,
+  PointLocationIcon,
+  SuitCaseIcon,
+} from "../Icons";
 
 export default function Nav() {
   return (
