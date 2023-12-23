@@ -1,17 +1,28 @@
-import { Iicon, ShareIcon } from "../../../../Icons";
+import {
+  AirAconditioning,
+  AutomaticBox,
+  Iicon,
+  ShareIcon,
+} from "../../../../Icons";
 import FullRoundedButton from "../../../Generals/FullRoundedButton";
-function Section1({title,details}:{title:string,details:string[]}) {
+function Section1({ title, details }: { title: string; details: string[] }) {
   return (
     <section className="  flex w-3/12 ">
-      <article>
-        <h3 className="font-bold  ">{title??""}</h3>
-        <div className="flex gap-4 text-xs">
-          {details?.map((detail) => (    
-          <p>
-            <span>{detail??""}</span>
-          </p>
+      <article className="flex flex-col gap-1">
+        <h3 className="font-bold  ">{title ?? ""}</h3>
+        <div className="flex gap-1 items-center text-xs">
+          {details?.map((detail) => (
+            <>
+              {detail.toLowerCase().includes("aire") ? (
+                <AirAconditioning />
+              ) : (
+                <AutomaticBox />
+              )}
+              <p>
+                <span>{detail ?? ""}</span>
+              </p>
+            </>
           ))}
-
         </div>
       </article>
     </section>
@@ -32,7 +43,15 @@ function Section2() {
   );
 }
 
-function Section3({totalPrice,priceTax,pricePerDay}:{totalPrice:string,priceTax:string,pricePerDay:string}) {
+function Section3({
+  totalPrice,
+  priceTax,
+  pricePerDay,
+}: {
+  totalPrice: string;
+  priceTax: string;
+  pricePerDay: string;
+}) {
   return (
     <section className="  flex flex-col w-2/12 text-xs gap-1 ">
       <article className="flex items-center gap-1">
@@ -42,11 +61,11 @@ function Section3({totalPrice,priceTax,pricePerDay}:{totalPrice:string,priceTax:
         </div>
       </article>
       <article>
-        <h3 className="font-bold text-base ">{totalPrice??""}</h3>
-        <span>({priceTax??""})</span>
+        <h3 className="font-bold text-base ">{totalPrice ?? ""}</h3>
+        <span>({priceTax ?? ""})</span>
       </article>
       <p className="">
-        Precio por dia :<b> {pricePerDay??""}</b>
+        Precio por dia :<b> {pricePerDay ?? ""}</b>
       </p>
     </section>
   );

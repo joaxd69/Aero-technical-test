@@ -13,7 +13,7 @@ import {
 
 export default function Nav() {
   return (
-    <nav className=" bg-primary w-full text-white flex   gap-4 h-[3rem] pl-6  ">
+    <nav className=" bg-primary w-full text-white flex   gap-4 h-[3rem] pl-6  text-sm ">
       <button className=" flex   items-center px-3 gap-1 hover:bg-[#002F84]">
         <AirPlaneIcon2 />
         <span>Vuelos</span>

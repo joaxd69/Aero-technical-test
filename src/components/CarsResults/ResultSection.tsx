@@ -13,7 +13,7 @@ export default function ResultSection() {
           <option value="">Mayor precio</option>
         </select>
       </section>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col   gap-4">
         <CarResult />
       </div>
     </div>

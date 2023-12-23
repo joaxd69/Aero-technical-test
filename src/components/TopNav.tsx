@@ -8,7 +8,7 @@ import {
 import bcertificate from "../assets/B-certificate.png";
 export default function TopNav() {
   return (
-    <div className="flex w-full gap-4 justify-between  items-center bg-white h-[4rem] ">
+    <div className="flex w-full gap-4 justify-between  items-center bg-white h-[4rem] text-sm ">
       <section className="flex items-center gap-6 pl-5">
         <article>
           <MenuIcon />

@@ -1,44 +1,28 @@
+import { useState } from "react";
 import ButtonBrands from "../../Generals/ButtonBrands";
 
 export default function BrandsCarsButtons({
-  actualSection,
-  selectSection,
+  operators,
 }: {
   actualSection?: string;
   selectSection?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  operators?: string[];
 }) {
+  const [actualSection, setActualSection] = useState("");
+  const selectSection = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setActualSection(e.currentTarget.name);
+  };
   return (
-    <section className="flex gap-1  h-[2.5rem] border-b border-primary bg-white">
-      <ButtonBrands
-        text="HERTZ"
-        isSelected={actualSection === "Hertz"}
-        onclick={selectSection}
-        buttonName="Hertz"
-      />
-      <ButtonBrands
-        text="DOLLAR DIAMOND"
-        isSelected={actualSection === "Dollar Diamond"}
-        onclick={selectSection}
-        buttonName="Dollar Diamond"
-      />
-      <ButtonBrands
-        text="AVIS"
-        isSelected={actualSection === "Avis"}
-        onclick={selectSection}
-        buttonName="Avis"
-      />
-      <ButtonBrands
-        text="BUDGET"
-        isSelected={actualSection === "Budget"}
-        onclick={selectSection}
-        buttonName="Budget"
-      />
-      <ButtonBrands
-        text="NATIONAL"
-        isSelected={actualSection === "National"}
-        onclick={selectSection}
-        buttonName="National"
-      />
+    <section className="flex gap-1  h-[2.5rem] border-b-2 border-blueAero bg-white">
+      {operators?.map((operator, index) => (
+        <ButtonBrands
+          key={index}
+          text={operator}
+          isSelected={actualSection === operator}
+          onclick={selectSection}
+          buttonName={operator}
+        />
+      ))}
     </section>
   );
 }
