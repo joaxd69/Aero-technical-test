@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Iicon,
   LuggageIcon,
@@ -6,6 +7,7 @@ import {
   TwoPersonIcon,
 } from "../../../../Icons";
 import { Car } from "../../../../interfaces";
+import PriceConditionWindow from "../../PriceConditionWindow/PriceConditionWindow";
 
 function Section1({ image }: { image: string }) {
   return (
@@ -42,7 +44,12 @@ function Section2() {
     </section>
   );
 }
-function Section3({price,pricePerDay,priceTax,}:Car) {
+function Section3({ price, pricePerDay, priceTax }: Car) {
+  const [seeMoreInfo, setSeeMoreInfo] = useState(false); //eslint-disable-line
+  const closeMoreInfo = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setSeeMoreInfo((prev: boolean) => !prev);
+  };
   return (
     <section className=" py-4   grow flex flex-col justify-between text-center bg-[#F9F9FF] gap-2">
       <article className="font-bold text-xs">
@@ -50,17 +57,22 @@ function Section3({price,pricePerDay,priceTax,}:Car) {
         <span className=" text-blueAero">Comenzando desde</span>
       </article>
 
-      <article className="flex flex-col">
-        <div className="flex items-center justify-center gap-2">
-          <b className="text-xl">{price??""}</b>
-          <Iicon height="15" width="15" />
+      <article className="flex flex-col ">
+        <div className="flex items-center justify-center gap-2 ">
+          <b className="text-xl">{price ?? ""}</b>
+          <div className="relative ">
+            <button className="" onClick={closeMoreInfo}>
+              <Iicon height="15" width="15" />
+            </button>
+            {seeMoreInfo && <PriceConditionWindow openWindow={closeMoreInfo} />}
+          </div>
         </div>
-        <span className="text-sm">({priceTax??""})</span>
+        <span className="text-sm">({priceTax ?? ""})</span>
       </article>
 
       <article className="flex flex-col gap-1">
         <p className="text-sm">
-          Precio por dia: <b>{pricePerDay??""}</b>
+          Precio por dia: <b>{pricePerDay ?? ""}</b>
         </p>
         <div className="flex justify-center gap-2 items-center text-xs">
           <QuestionIcon height="15" width="15" />

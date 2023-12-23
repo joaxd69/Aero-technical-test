@@ -1,3 +1,4 @@
+
 import CarResult from "./ResultsSection/CarResult";
 
 export default function ResultSection() {
