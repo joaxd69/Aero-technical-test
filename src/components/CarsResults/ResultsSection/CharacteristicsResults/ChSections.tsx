@@ -70,11 +70,20 @@ function Section3({
     </section>
   );
 }
-function Section4() {
+function Section4({
+  openModal,
+}: {
+  openModal: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}) {
   return (
     <section className="   gap-12  w-1/12 flex items-center grow">
       <ShareIcon height="24" width="24" />
-      <FullRoundedButton text="Reservar" className="w-full" />
+      <FullRoundedButton
+        type="one"
+        text="Reservar"
+        className="w-full"
+        onClick={openModal}
+      />
     </section>
   );
 }

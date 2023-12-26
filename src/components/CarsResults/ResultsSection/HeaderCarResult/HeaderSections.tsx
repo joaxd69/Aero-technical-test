@@ -61,7 +61,7 @@ function Section3({ price, pricePerDay, priceTax }: Car) {
         <div className="flex items-center justify-center gap-2 ">
           <b className="text-xl">{price ?? ""}</b>
           <div className="relative ">
-            <button className="" onClick={closeMoreInfo}>
+            <button className="" onClick={closeMoreInfo} title="ver mas informacion">
               <Iicon height="15" width="15" />
             </button>
             {seeMoreInfo && <PriceConditionWindow openWindow={closeMoreInfo} />}

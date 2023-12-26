@@ -6,15 +6,15 @@ export default function PriceConditionWindow({
   openWindow: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }) {
   return (
-    <div className=" font-semibold text-sm absolute min-w-[25rem]  bg-white right-[-310%] top-[150%]  flex flex-col gap-2 shadow-containerShadow rounded">
+    <div className=" border border-blueAero font-semibold text-sm absolute min-w-[28rem]  bg-white right-[-350%] top-[150%]  flex flex-col gap-2 shadow-containerShadow rounded">
       <div className=" absolute bottom-[100%]   right-[10%] w-0 h-0 border-l-[14px] border-l-transparent border-r-[14px] border-r-transparent border-b-[14px] border-b-primary" />
 
       <section className=" bg-primary rounded-t-sm text-white flex items-center justify-between p-3 font-bold ">
         <h6>Detalle de tarifas y condiciones</h6>
-        <button onClick={openWindow ?? (() => {})}>x</button>
+        <button onClick={openWindow ?? (() => {})} className="   text-base">x</button>
       </section>
 
-      <div className="flex flex-col   px-2 pb-4">
+      <div className="flex flex-col   px-4 pb-4">
         <section className="flex justify-between border-b border-[#C3C4C4]  items-center py-3">
           <article className="  flex    w-fit items-center gap-1 ">
             <CarIcon color="black" />
