@@ -8,7 +8,13 @@ import {
 import FullRoundedButton from "../../Generals/FullRoundedButton";
 import DescriptionBox from "../DescriptionBox";
 
-function Section1({ carImage }: { carImage: string }) {
+function CarInfoSection1({
+  carImage,
+  changeStep,
+}: {
+  carImage: string;
+  changeStep: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}) {
   return (
     <section className="w-6/12 gap-4 flex flex-col  ">
       <div className="flex flex-col  shadow-containerShadow rounded-lg">
@@ -115,16 +121,18 @@ function Section1({ carImage }: { carImage: string }) {
           </section>
         </div>
         <FullRoundedButton
+          onClick={changeStep}
           text="Cambiar oficina"
           type="two"
           className="w-fit m-auto"
+          ButtonValue="ChangePlace"
         />
       </div>
     </section>
   );
 }
 
-function Section2() {
+function CarInfoSection2() {
   return (
     <section className="  grow w-6/12 px-5  flex flex-col gap-3 ">
       <article>
@@ -187,4 +195,4 @@ function Section2() {
     </section>
   );
 }
-export { Section1, Section2 };
+export { CarInfoSection1, CarInfoSection2 };

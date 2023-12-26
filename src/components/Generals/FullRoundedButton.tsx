@@ -3,11 +3,13 @@ export default function FullRoundedButton({
   className,
   onClick,
   type,
+  ButtonValue,
 }: {
   text: string;
   className?: string;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: "one" | "two";
+  ButtonValue?: string;
 }) {
   const styles = {
     type1:
@@ -18,6 +20,7 @@ export default function FullRoundedButton({
   return (
     <button
       onClick={onClick ?? (() => {})}
+      value={ButtonValue ?? ""}
       className={`${className} ${
         type === "one" ? styles.type1 : styles.type2
       }`}>

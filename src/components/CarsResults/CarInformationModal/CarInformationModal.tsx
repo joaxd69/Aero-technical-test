@@ -1,7 +1,12 @@
 import { Car } from "../../../interfaces";
-import LayoutModal from "../../Generals/LayoutModal";
 import carImage from "../../../assets/auto1.png";
-import { Section1, Section2 } from "./CarInfoModalSections";
+import { CarInfoSection1, CarInfoSection2 } from "./CarInfoModalSections";
+import LayoutCarInformationModal from "./LayoutCarInformationModal";
+import { useState } from "react";
+import {
+  ChangePlaceSection1,
+  ChangePlaceSection2,
+} from "./ChangePlaceSections";
 interface CarInfoProps extends Car {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -17,36 +22,48 @@ export default function CarInformationModal({
   type,
   onClick,
 }: CarInfoProps) {
-  console.log({
+  const [step, setStep] = useState<"prevDetails" | "ChangePlace" | "seePlace">(
+    "prevDetails"
+  );
+  console.log(
+    id,
+    type,
     name,
-    description,
     price,
     pricePerDay,
     priceTax,
     image,
     moreInfo,
-    id,
-    type,
-    onClick,
-  });
-  return (
-    <LayoutModal>
-      <div className=" w-11/12 bg-white px-5 flex flex-col text-xs  gap-2 relative py-6">
-        <button
-          className="text-lg font-bold absolute top-0 right-[20px]"
-          onClick={onClick}>
-          X
-        </button>
+    description
+  );
+  const changeStep = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const value = e.currentTarget.value;
+    setStep(value as "prevDetails" | "ChangePlace" | "seePlace");
+  };
+  const title =
+    step === "prevDetails"
+      ? "Información de tu auto"
+      : step === "ChangePlace" || step === "seePlace"
+      ? "Lugar de retiro y devolución"
+      : "";
 
-        <section>
-          <h1 className=" text-base font-bold">Informacion de tu auto</h1>
-        </section>
-        <hr className="w-full bg-blueAero h-1" />
-        <div className="flex justify-between">
-          <Section1 carImage={carImage} />
-          <Section2 />
-        </div>
+  return (
+    <LayoutCarInformationModal onClick={onClick!} title={title}>
+      <div className="flex justify-between h-full">
+        {step === "prevDetails" && (
+          <>
+            <CarInfoSection1 carImage={carImage} changeStep={changeStep} />
+            <CarInfoSection2 />
+          </>
+        )}
+        {step === "ChangePlace" && (
+          <>
+            <ChangePlaceSection1 />
+            <ChangePlaceSection2 changeStep={changeStep} />
+          </>
+        )}
       </div>
-    </LayoutModal>
+    </LayoutCarInformationModal>
   );
 }

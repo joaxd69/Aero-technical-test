@@ -1,4 +1,4 @@
-import { UbicationIcon } from "../../../Icons";
+import { ClockIcon, UbicationIcon } from "../../../Icons";
 
 export default function SearchBoxSectionTwo({
   FullFilters,
@@ -32,7 +32,7 @@ export default function SearchBoxSectionTwo({
           FullFilters ? "w-6/12" : "w-auto"
         } `}>
         <label htmlFor="PlaceOne">Fecha y hora de alquiler</label>
-        <div className="border border-[#454848] p-0.5 rounded-lg bg-[#FAFAFA] flex  gap-1 ">
+        <div className="border border-[#454848] p-0.5 rounded-lg bg-[#FAFAFA] flex  gap-1 relative  pr-8">
           <input
             className="  p-1 rounded-lg h-full w-full outline-none"
             type="date"
@@ -42,12 +42,15 @@ export default function SearchBoxSectionTwo({
           />
           <figure className="h-5/6 w-0.5 bg-black" />
           <input
-            className="  p-2 rounded-lg h-full w-full outline-none"
+            className="  p-2 rounded-lg h-full w-6/12 outline-none"
             type="hour"
             name="PlaceOne"
             id="PlaceOne"
-            placeholder="Ingrese una hora"
+            placeholder="Hora"
           />
+          <article className="-500 absolute top-0 right-0 h-full rounded-lg w-2/12 flex items-center justify-center">
+            <ClockIcon />
+          </article>
         </div>
       </article>
     </section>
