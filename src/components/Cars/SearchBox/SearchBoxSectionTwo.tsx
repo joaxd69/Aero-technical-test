@@ -1,4 +1,4 @@
-import { ClockIcon, UbicationIcon } from "../../../Icons";
+import { UbicationIcon } from "../../../Icons";
 
 export default function SearchBoxSectionTwo({
   FullFilters,

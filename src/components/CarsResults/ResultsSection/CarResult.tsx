@@ -22,9 +22,10 @@ export default function CarResult() {
             moreInfo={car.moreInfo}
             id={car.id}
           />
-          {car?.variants?.map((variant) => {
+          {car?.variants?.map((variant, index) => {
             return (
               <CharacteristicsResults
+                key={index}
                 price={variant.price}
                 priceTax={variant.priceTax}
                 pricePerDay={variant.pricePerDay}
