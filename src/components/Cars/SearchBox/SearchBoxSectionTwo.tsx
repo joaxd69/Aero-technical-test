@@ -2,8 +2,19 @@ import { ClockIcon, UbicationIcon } from "../../../Icons";
 
 export default function SearchBoxSectionTwo({
   FullFilters,
+  updateSearchData,
+  dropOffPlace,
+  pickUpDate,
+  pickUpTime,
 }: {
   FullFilters?: boolean;
+  updateSearchData: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    typeOfInput?: string
+  ) => void;
+  dropOffPlace?: string;
+  pickUpDate?: string;
+  pickUpTime?: string;
 }) {
   return (
     <section
@@ -12,14 +23,16 @@ export default function SearchBoxSectionTwo({
         className={` gap-1 flex flex-col grow ${
           FullFilters ? "w-6/12" : "w-auto"
         } `}>
-        <label htmlFor="PlaceOne">Lo devuelvo en</label>
+        <label htmlFor="PlaceDropOff">Lo devuelvo en</label>
         <div className="border border-[#454848] p-0.5 rounded-lg bg-[#FAFAFA] flex relative pr-8 ">
           <input
             className="  p-2 rounded-lg h-full w-full outline-none"
             type="text"
-            name="PlaceOne"
-            id="PlaceOne"
+            name="dropOffPlace"
+            value={dropOffPlace}
+            id="PlaceDropOff"
             placeholder="Miami, Estados Unidos"
+            onChange={(e) => updateSearchData(e)}
           />
           <article className="-500 absolute top-0 right-0 h-full rounded-lg w-2/12 flex items-center justify-center">
             <UbicationIcon height="20" width="20" />
@@ -31,26 +44,27 @@ export default function SearchBoxSectionTwo({
         className={` gap-1 flex flex-col grow ${
           FullFilters ? "w-6/12" : "w-auto"
         } `}>
-        <label htmlFor="PlaceOne">Fecha y hora de alquiler</label>
-        <div className="border border-[#454848] p-0.5 rounded-lg bg-[#FAFAFA] flex  gap-1 relative  pr-8">
+        <label htmlFor="PickUpDate">Fecha y hora de alquiler</label>
+        <div className="border border-[#454848] p-0.5 rounded-lg bg-[#FAFAFA] flex  items-center gap-1 relative  ">
           <input
-            className="  p-1 rounded-lg h-full w-full outline-none"
+            className="  p-1 rounded-lg h-full w-6/12 outline-none"
             type="date"
-            name="PlaceOne"
-            id="PlaceOne"
+            name="pickUpDate"
+            id="PickUpDate"
+            value={pickUpDate}
             placeholder="Ingrese una fecha"
+            onChange={(e) => updateSearchData(e, "date")}
           />
           <figure className="h-5/6 w-0.5 bg-black" />
           <input
             className="  p-2 rounded-lg h-full w-6/12 outline-none"
-            type="hour"
-            name="PlaceOne"
-            id="PlaceOne"
+            type="time"
+            name="pickUpDate"
+            id="pickUpDateTime"
+            value={pickUpTime}
             placeholder="Hora"
+            onChange={(e) => updateSearchData(e, "time")}
           />
-          <article className="-500 absolute top-0 right-0 h-full rounded-lg w-2/12 flex items-center justify-center">
-            <ClockIcon />
-          </article>
         </div>
       </article>
     </section>
