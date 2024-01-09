@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SearchBoxSectionOne from "./SearchBox/SearchBoxSectionOne";
 import SearchBoxSectionTwo from "./SearchBox/SearchBoxSectionTwo";
 import { SearchIcon, TrashIcon } from "../../Icons";
@@ -49,14 +48,13 @@ export default function SearchBox({ FullFilters }: { FullFilters?: boolean }) {
           FullFilters ? "flex items-center   pt-5 w-[12rem]  " : " w-full"
         }  `}>
         <div className="w-full flex items-center gap-4">
-          <Link to={`/results`} className="w-full">
-            <button
-              onClick={handleSubmit}
-              className="bg-blueAero text-white w-full  rounded-sm h-10 hover:bg-primary flex justify-center items-center gap-2">
-              <SearchIcon height="14" width="14" />
-              Buscar
-            </button>
-          </Link>
+          <button
+            onClick={handleSubmit}
+            className="bg-blueAero text-white w-full  rounded-sm h-10 hover:bg-primary flex justify-center items-center gap-2">
+            <SearchIcon height="14" width="14" />
+            Buscar
+          </button>
+
           {FullFilters && (
             <TrashIcon height="17" width="17" onClick={clearSearchData} />
           )}

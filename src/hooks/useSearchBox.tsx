@@ -5,10 +5,11 @@ import {
   setPlaceBoxForm,
 } from "../store/Search.slice";
 import { ValidateSearch } from "../utils/FormValidations";
-
+import { useNavigate } from "react-router-dom";
 export function useSearchBox() {
   const searchData = useAppSelector((state) => state.searchBox);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const updateSearchData = (
     e: React.ChangeEvent<HTMLInputElement>,
     typeOfInput?: string
@@ -35,6 +36,7 @@ export function useSearchBox() {
     if (isError) {
       return alert(error);
     }
+    navigate("/results");
     console.log(searchData);
   };
   return {
