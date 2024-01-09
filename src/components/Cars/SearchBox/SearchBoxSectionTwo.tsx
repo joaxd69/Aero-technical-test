@@ -18,15 +18,15 @@ export default function SearchBoxSectionTwo({
 }) {
   return (
     <section
-      className={`w-6/12 flex   ${FullFilters ? "" : " flex-col "} gap-4`}>
+      className={`w-6/12 flex   ${FullFilters ? "py-4" : " flex-col "} gap-4`}>
       <article
         className={` gap-1 flex flex-col grow ${
           FullFilters ? "w-6/12" : "w-auto"
         } `}>
         <label htmlFor="PlaceDropOff">Lo devuelvo en</label>
-        <div className="border border-[#454848] p-0.5 rounded-lg bg-[#FAFAFA] flex relative pr-8 ">
+        <div className="border border-[#454848] p-0.5 rounded bg-[#FAFAFA] flex relative pr-8 ">
           <input
-            className="  p-2 rounded-lg h-full w-full outline-none"
+            className="  p-2.5 rounded-lg h-full w-full outline-none"
             type="text"
             name="dropOffPlace"
             value={dropOffPlace}
@@ -45,9 +45,9 @@ export default function SearchBoxSectionTwo({
           FullFilters ? "w-6/12" : "w-auto"
         } `}>
         <label htmlFor="PickUpDate">Fecha y hora de alquiler</label>
-        <div className="border border-[#454848] p-0.5 rounded-lg bg-[#FAFAFA] flex  items-center gap-1 relative  ">
+        <div className="border border-[#454848] p-0.5 rounded bg-[#FAFAFA] flex items-center  gap-1 relative pr-1  ">
           <input
-            className="  p-1 rounded-lg h-full w-6/12 outline-none"
+            className="  p-1 rounded-lg h-full w-9/12 outline-none  "
             type="date"
             name="pickUpDate"
             id="PickUpDate"
@@ -55,7 +55,8 @@ export default function SearchBoxSectionTwo({
             placeholder="Ingrese una fecha"
             onChange={(e) => updateSearchData(e, "date")}
           />
-          <figure className="h-5/6 w-0.5 bg-black" />
+          <hr className="h-5/6 w-0.5 border-[#454848] border-r-[0.1px] border-l-0 border-t-0 border-b-0" />
+
           <input
             className="  p-2 rounded-lg h-full w-6/12 outline-none"
             type="time"

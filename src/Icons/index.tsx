@@ -797,9 +797,11 @@ function CalendarIcon() {
     </svg>
   );
 }
-function TrashIcon( { height, width }: { height?: string; width?: string }) {
+function TrashIcon( { height, width,onClick }: { height?: string; width?: string,onClick?:(e:React.MouseEvent<HTMLOrSVGElement>)=>void }) {
   return (
     <svg
+      className=" cursor-pointer"
+      onClick={onClick}
       xmlns="http://www.w3.org/2000/svg"
       width={width ?? "13"}
       height={height ?? "15"}
